@@ -1,4 +1,4 @@
-package com.example.webproject;
+package com.example.webproject.servlets;
 
 import java.io.*;
 import jakarta.servlet.http.*;

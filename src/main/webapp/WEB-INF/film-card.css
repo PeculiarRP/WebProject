@@ -1,0 +1,18 @@
+div .card {
+    width: 250px;
+    height: 300px;
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+div .card-top .card-name{
+    text-align: center;
+    color: black;
+}
+
+div .card-bottom .description {
+    color: black;
+}

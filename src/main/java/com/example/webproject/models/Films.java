@@ -8,27 +8,17 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 @Data
-@Entity
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "People")
-public class Person {
+@AllArgsConstructor
+@Entity
+@Table(name = "Films")
+public class Films {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID uuid;
 
     @Column
-    private String name;
-
+    private String filmName;
     @Column
-    private String surname;
-
-    @Column
-    private Integer age;
-
-    @Column
-    private String work;
-
-    @Column
-    private String education;
+    private String filmDescription;
 }

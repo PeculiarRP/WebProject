@@ -1,5 +1,4 @@
 package com.example.webproject.dao;
 
-public interface People {
-
+public class FilmDAOImpl {
 }

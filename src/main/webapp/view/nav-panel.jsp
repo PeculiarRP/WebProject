@@ -12,7 +12,7 @@
 <nav>
     <a href="/">Home</a>
     <a href="/table-servlet">Таблица людей</a>
-    <a href="#">Blog</a>
+    <a href="/films-servlet">Фильмы</a>
     <a href="#">Portefolio</a>
     <a href="#">Contact</a>
     <div class="animation start-${param.curPage}"></div>

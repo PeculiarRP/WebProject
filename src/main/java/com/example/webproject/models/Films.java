@@ -1,24 +1,29 @@
 package com.example.webproject.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+@Entity
+@Table(name = "films", schema = "web_pr")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "Films")
 public class Films {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GenericGenerator(name = "UUIDGenerator", strategy = "uuid2")
+    @GeneratedValue(generator = "UUIDGenerator")
+    @Column(name = "film_id")
     private UUID uuid;
 
-    @Column
+    @Column(name = "film_name")
     private String filmName;
-    @Column
+    @Column(name = "film_description")
     private String filmDescription;
+    @Column(name = "film_image")
+    private byte[] filmImage;
 }

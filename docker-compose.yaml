@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  postgre:
+    container_name: db_for_web_pr
+    image: postgres:13.3
+    environment:
+      POSTGER_DB: 'WEB_PROJECT'
+      POSTGRES_USER: 'peculiar'
+      POSTGRES_PASSWORD: 'peculiar'
+      PGDATA: '/var/lib/postgresql/data/pgdata'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+volumes:
+  db-data:

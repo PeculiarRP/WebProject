@@ -11,6 +11,9 @@
     <title>Карточка</title>
 </head>
 <body>
+<jsp:include page="nav-panel.jsp">
+    <jsp:param name="curPage" value="films"/>
+</jsp:include>
     <div class="cards">
         <c:forEach var="film" items="${requestScope.films}">
             <c:set var="film" value="${film}" scope="request"/>

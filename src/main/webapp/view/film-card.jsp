@@ -1,4 +1,5 @@
 <%@ page import="com.example.webproject.models.Films" %>
+<%@ page import="java.util.Base64" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style>
     <%@include file="../WEB-INF/film-card.css"%>
@@ -14,7 +15,7 @@
             %>
         </h1>
         <a href="#" class="card-image">
-            <img src="" alt="">
+            <img src="data:image/jpeg;base64,<%out.println(film.getFilmImage());%>" alt="image">
         </a>
     </div>
     <div class="card-bottom">

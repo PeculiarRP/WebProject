@@ -1,6 +1,7 @@
 package com.example.webproject.servlets;
 
 import com.example.webproject.models.Films;
+import com.example.webproject.services.FilmService;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,15 +16,10 @@ import java.util.UUID;
 
 @WebServlet(name = "films-servlet", value = "/films-servlet")
 public class FilmServlet extends HttpServlet {
-
+    private final FilmService filmsService = new FilmService();
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        List<Films> films = new ArrayList<>();
-        films.add(new Films(UUID.randomUUID(),
-                "Хрюк",
-                "Очень интересно"));
-        films.add(new Films(UUID.randomUUID(),
-                "Хрюк2",
-                "Очень интересно @"));
+        List<Films> films = filmsService.getAllFilms();
+
         req.setAttribute("films", films);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("view/film-cards.jsp");
         requestDispatcher.forward(req, res);
